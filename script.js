@@ -8,7 +8,7 @@ async function checkweather(city) {
   try{
         const response = await fetch(apiUrl + city + `&appid=${apikey}`);
         if(!response.ok){
-            throw new Error("City was not found");
+            document.querySelector(".city").innerHTML = "City not found";
         }
         
         var data = await response.json();
