@@ -9,6 +9,9 @@ async function checkweather(city) {
         const response = await fetch(apiUrl + city + `&appid=${apikey}`);
         if(!response.ok){
             document.querySelector(".city").innerHTML = "City not found";
+            document.querySelector(".temp").innerHTML = " ";
+            document.querySelector(".humidity").innerHTML = " ";
+            document.querySelector(".wind").innerHTML = " ";
         }
         
         var data = await response.json();
